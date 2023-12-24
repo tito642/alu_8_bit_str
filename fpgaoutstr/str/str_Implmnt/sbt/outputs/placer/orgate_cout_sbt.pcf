@@ -1,0 +1,6 @@
+set_location f_obuf_RNO 1 4 0 # SB_LUT4 (LogicCell: f_obuf_RNO_LC_0)
+set_location GND -1 -1 -1 # GND
+set_io a_ibuf 0 3 0 # ICE_IO
+set_io b_ibuf 0 5 0 # ICE_IO
+set_io c_ibuf 0 4 0 # ICE_IO
+set_io f_obuf 0 2 0 # ICE_IO

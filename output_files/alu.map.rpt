@@ -1,0 +1,450 @@
+Analysis & Synthesis report for alu
+Fri Dec 22 20:49:38 2023
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "full_adder:g1|mux2x1:g39"
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Dec 22 20:49:38 2023          ;
+; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                   ; alu                                            ;
+; Top-level Entity Name           ; alu                                            ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 8                                              ;
+; Total pins                      ; 29                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
+; Top-level entity name                                                           ; alu                ; alu                ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                      ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                        ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
+; shift_reg.v                      ; yes             ; User Verilog HDL File  ; C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/shift_reg.v  ;         ;
+; logic_unit.v                     ; yes             ; User Verilog HDL File  ; C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/logic_unit.v ;         ;
+; full_adder.v                     ; yes             ; User Verilog HDL File  ; C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/full_adder.v ;         ;
+; alu.v                            ; yes             ; User Verilog HDL File  ; C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu.v        ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimate of Logic utilization (ALMs needed) ; 29         ;
+;                                             ;            ;
+; Combinational ALUT usage for logic          ; 46         ;
+;     -- 7 input functions                    ; 1          ;
+;     -- 6 input functions                    ; 11         ;
+;     -- 5 input functions                    ; 15         ;
+;     -- 4 input functions                    ; 8          ;
+;     -- <=3 input functions                  ; 11         ;
+;                                             ;            ;
+; Dedicated logic registers                   ; 8          ;
+;                                             ;            ;
+; I/O pins                                    ; 29         ;
+;                                             ;            ;
+; Total DSP Blocks                            ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; s[3]~input ;
+; Maximum fan-out                             ; 21         ;
+; Total fan-out                               ; 264        ;
+; Average fan-out                             ; 2.36       ;
++---------------------------------------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                           ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                       ; Entity Name  ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------+--------------+--------------+
+; |alu                       ; 46 (1)              ; 8 (8)                     ; 0                 ; 0          ; 29   ; 0            ; |alu                                      ; alu          ; work         ;
+;    |control_unit:g42|      ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g42                     ; control_unit ; work         ;
+;       |mux2x1:g2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g42|mux2x1:g2           ; mux2x1       ; work         ;
+;          |orgate:g3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g42|mux2x1:g2|orgate:g3 ; orgate       ; work         ;
+;    |control_unit:g43|      ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g43                     ; control_unit ; work         ;
+;       |mux2x1:g2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g43|mux2x1:g2           ; mux2x1       ; work         ;
+;          |orgate:g3|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g43|mux2x1:g2|orgate:g3 ; orgate       ; work         ;
+;    |control_unit:g44|      ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g44                     ; control_unit ; work         ;
+;       |mux2x1:g2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g44|mux2x1:g2           ; mux2x1       ; work         ;
+;          |orgate:g3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g44|mux2x1:g2|orgate:g3 ; orgate       ; work         ;
+;    |control_unit:g45|      ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g45                     ; control_unit ; work         ;
+;       |mux2x1:g2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g45|mux2x1:g2           ; mux2x1       ; work         ;
+;          |orgate:g3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g45|mux2x1:g2|orgate:g3 ; orgate       ; work         ;
+;    |control_unit:g46|      ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g46                     ; control_unit ; work         ;
+;       |mux2x1:g2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g46|mux2x1:g2           ; mux2x1       ; work         ;
+;          |orgate:g3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g46|mux2x1:g2|orgate:g3 ; orgate       ; work         ;
+;    |control_unit:g47|      ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g47                     ; control_unit ; work         ;
+;       |mux2x1:g2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g47|mux2x1:g2           ; mux2x1       ; work         ;
+;          |orgate:g3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g47|mux2x1:g2|orgate:g3 ; orgate       ; work         ;
+;    |control_unit:g48|      ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g48                     ; control_unit ; work         ;
+;       |mux2x1:g2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g48|mux2x1:g2           ; mux2x1       ; work         ;
+;          |orgate:g3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g48|mux2x1:g2|orgate:g3 ; orgate       ; work         ;
+;    |control_unit:g49|      ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g49                     ; control_unit ; work         ;
+;       |mux2x1:g2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g49|mux2x1:g2           ; mux2x1       ; work         ;
+;          |orgate:g3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|control_unit:g49|mux2x1:g2|orgate:g3 ; orgate       ; work         ;
+;    |full_adder:g1|         ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1                        ; full_adder   ; work         ;
+;       |sumadd:g2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumadd:g2              ; sumadd       ; work         ;
+;          |orgate3:g5|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumadd:g2|orgate3:g5   ; orgate3      ; work         ;
+;          |xorgate3:g1|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumadd:g2|xorgate3:g1  ; xorgate3     ; work         ;
+;       |sumadd:g3|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumadd:g3              ; sumadd       ; work         ;
+;          |xorgate3:g1|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumadd:g3|xorgate3:g1  ; xorgate3     ; work         ;
+;       |sumadd:g4|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumadd:g4              ; sumadd       ; work         ;
+;          |orgate3:g5|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumadd:g4|orgate3:g5   ; orgate3      ; work         ;
+;          |xorgate3:g1|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumadd:g4|xorgate3:g1  ; xorgate3     ; work         ;
+;       |sumadd:g5|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumadd:g5              ; sumadd       ; work         ;
+;          |xorgate3:g1|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumadd:g5|xorgate3:g1  ; xorgate3     ; work         ;
+;       |sumadd:g6|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumadd:g6              ; sumadd       ; work         ;
+;          |orgate3:g5|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumadd:g6|orgate3:g5   ; orgate3      ; work         ;
+;          |xorgate3:g1|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumadd:g6|xorgate3:g1  ; xorgate3     ; work         ;
+;       |sumadd:g7|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumadd:g7              ; sumadd       ; work         ;
+;          |xorgate3:g1|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumadd:g7|xorgate3:g1  ; xorgate3     ; work         ;
+;       |sumadd:g8|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumadd:g8              ; sumadd       ; work         ;
+;          |xorgate3:g1|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumadd:g8|xorgate3:g1  ; xorgate3     ; work         ;
+;       |sumsub:g22|         ; 2 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumsub:g22             ; sumsub       ; work         ;
+;          |orgate:g8|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumsub:g22|orgate:g8   ; orgate       ; work         ;
+;       |sumsub:g23|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumsub:g23             ; sumsub       ; work         ;
+;       |sumsub:g24|         ; 2 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumsub:g24             ; sumsub       ; work         ;
+;          |orgate:g8|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumsub:g24|orgate:g8   ; orgate       ; work         ;
+;       |sumsub:g25|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumsub:g25             ; sumsub       ; work         ;
+;       |sumsub:g26|         ; 2 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumsub:g26             ; sumsub       ; work         ;
+;          |orgate:g8|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumsub:g26|orgate:g8   ; orgate       ; work         ;
+;       |sumsub:g27|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumsub:g27             ; sumsub       ; work         ;
+;       |sumsub:g28|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:g1|sumsub:g28             ; sumsub       ; work         ;
+;    |logic_unit:g2|         ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|logic_unit:g2                        ; logic_unit   ; work         ;
+;       |mux4x2:g52|         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|logic_unit:g2|mux4x2:g52             ; mux4x2       ; work         ;
+;          |orgate:g7|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|logic_unit:g2|mux4x2:g52|orgate:g7   ; orgate       ; work         ;
+;       |mux4x2:g53|         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|logic_unit:g2|mux4x2:g53             ; mux4x2       ; work         ;
+;          |orgate:g7|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|logic_unit:g2|mux4x2:g53|orgate:g7   ; orgate       ; work         ;
+;       |mux4x2:g54|         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|logic_unit:g2|mux4x2:g54             ; mux4x2       ; work         ;
+;          |orgate:g7|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|logic_unit:g2|mux4x2:g54|orgate:g7   ; orgate       ; work         ;
+;       |mux4x2:g55|         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|logic_unit:g2|mux4x2:g55             ; mux4x2       ; work         ;
+;          |orgate:g7|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|logic_unit:g2|mux4x2:g55|orgate:g7   ; orgate       ; work         ;
+;       |mux4x2:g56|         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|logic_unit:g2|mux4x2:g56             ; mux4x2       ; work         ;
+;          |orgate:g7|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|logic_unit:g2|mux4x2:g56|orgate:g7   ; orgate       ; work         ;
+;       |mux4x2:g57|         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|logic_unit:g2|mux4x2:g57             ; mux4x2       ; work         ;
+;          |orgate:g7|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|logic_unit:g2|mux4x2:g57|orgate:g7   ; orgate       ; work         ;
+;       |mux4x2:g58|         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|logic_unit:g2|mux4x2:g58             ; mux4x2       ; work         ;
+;          |orgate:g7|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|logic_unit:g2|mux4x2:g58|orgate:g7   ; orgate       ; work         ;
+;    |shift_reg:g3|          ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|shift_reg:g3                         ; shift_reg    ; work         ;
+;       |mux4x2:g52|         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|shift_reg:g3|mux4x2:g52              ; mux4x2       ; work         ;
+;          |orgate:g7|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|shift_reg:g3|mux4x2:g52|orgate:g7    ; orgate       ; work         ;
+;       |mux4x2:g53|         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|shift_reg:g3|mux4x2:g53              ; mux4x2       ; work         ;
+;          |orgate:g7|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|shift_reg:g3|mux4x2:g53|orgate:g7    ; orgate       ; work         ;
+;       |mux4x2:g54|         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|shift_reg:g3|mux4x2:g54              ; mux4x2       ; work         ;
+;          |orgate:g7|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|shift_reg:g3|mux4x2:g54|orgate:g7    ; orgate       ; work         ;
+;       |mux4x2:g55|         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|shift_reg:g3|mux4x2:g55              ; mux4x2       ; work         ;
+;          |orgate:g7|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|shift_reg:g3|mux4x2:g55|orgate:g7    ; orgate       ; work         ;
+;       |mux4x2:g56|         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|shift_reg:g3|mux4x2:g56              ; mux4x2       ; work         ;
+;          |orgate:g7|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|shift_reg:g3|mux4x2:g56|orgate:g7    ; orgate       ; work         ;
+;       |mux4x2:g57|         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|shift_reg:g3|mux4x2:g57              ; mux4x2       ; work         ;
+;          |orgate:g7|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|shift_reg:g3|mux4x2:g57|orgate:g7    ; orgate       ; work         ;
+;       |mux4x2:g58|         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|shift_reg:g3|mux4x2:g58              ; mux4x2       ; work         ;
+;          |orgate:g7|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|shift_reg:g3|mux4x2:g58|orgate:g7    ; orgate       ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 8     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |alu|alu_out[1]~reg0       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "full_adder:g1|mux2x1:g39"                                                           ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; f    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 8                           ;
+;     plain             ; 8                           ;
+; arriav_lcell_comb     ; 46                          ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 45                          ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 9                           ;
+;         4 data inputs ; 8                           ;
+;         5 data inputs ; 15                          ;
+;         6 data inputs ; 11                          ;
+; boundary_port         ; 29                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.81                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Fri Dec 22 20:49:07 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off alu -c alu
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file shift_reg_tb.v
+    Info (12023): Found entity 1: shift_reg_tb File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/shift_reg_tb.v Line: 3
+Info (12021): Found 5 design units, including 5 entities, in source file shift_reg.v
+    Info (12023): Found entity 1: shift_reg File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/shift_reg.v Line: 1
+    Info (12023): Found entity 2: ShiftL File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/shift_reg.v Line: 25
+    Info (12023): Found entity 3: ShiftR File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/shift_reg.v Line: 38
+    Info (12023): Found entity 4: RotateL File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/shift_reg.v Line: 51
+    Info (12023): Found entity 5: RotateR File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/shift_reg.v Line: 64
+Info (12021): Found 1 design units, including 1 entities, in source file logic_unit_tb.v
+    Info (12023): Found entity 1: logic_unit_tb File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/logic_unit_tb.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file logic_unit.v
+    Info (12023): Found entity 1: logic_unit File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/logic_unit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file full_adder_tb.v
+    Info (12023): Found entity 1: full_adder_tb File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/full_adder_tb.v Line: 3
+Info (12021): Found 3 design units, including 3 entities, in source file full_adder.v
+    Info (12023): Found entity 1: full_adder File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/full_adder.v Line: 1
+    Info (12023): Found entity 2: sumadd File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/full_adder.v Line: 60
+    Info (12023): Found entity 3: sumsub File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/full_adder.v Line: 75
+Info (12021): Found 1 design units, including 1 entities, in source file alu_tb.v
+    Info (12023): Found entity 1: alu_tb File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu_tb.v Line: 1
+Info (12021): Found 13 design units, including 13 entities, in source file alu.v
+    Info (12023): Found entity 1: alu File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu.v Line: 1
+    Info (12023): Found entity 2: control_unit File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu.v Line: 38
+    Info (12023): Found entity 3: xorgate File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu.v Line: 52
+    Info (12023): Found entity 4: xorgate3 File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu.v Line: 57
+    Info (12023): Found entity 5: orgate File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu.v Line: 64
+    Info (12023): Found entity 6: orgate3 File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu.v Line: 70
+    Info (12023): Found entity 7: andgate File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu.v Line: 77
+    Info (12023): Found entity 8: andgatem8 File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu.v Line: 82
+    Info (12023): Found entity 9: andgatem4 File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu.v Line: 88
+    Info (12023): Found entity 10: orgate_cout File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu.v Line: 95
+    Info (12023): Found entity 11: notgate File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu.v Line: 102
+    Info (12023): Found entity 12: mux2x1 File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu.v Line: 128
+    Info (12023): Found entity 13: mux4x2 File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu.v Line: 152
+Info (12021): Found 1 design units, including 1 entities, in source file /users/royaa/desktop/alu_8bit_project/alu_behavioral/shift_reg_behavioral.v
+    Info (12023): Found entity 1: shift_reg_behavioral File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_behavioral/shift_reg_behavioral.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/royaa/desktop/alu_8bit_project/alu_behavioral/alu_behavioral.v
+    Info (12023): Found entity 1: alu_behavioral File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_behavioral/alu_behavioral.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/royaa/desktop/alu_8bit_project/alu_behavioral/alu_behavioral_tb.v
+    Info (12023): Found entity 1: alu_behavioral_tb File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_behavioral/alu_behavioral_tb.v Line: 1
+Info (12127): Elaborating entity "alu" for the top level hierarchy
+Info (12128): Elaborating entity "full_adder" for hierarchy "full_adder:g1" File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu.v Line: 15
+Info (12128): Elaborating entity "sumadd" for hierarchy "full_adder:g1|sumadd:g1" File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/full_adder.v Line: 28
+Info (12128): Elaborating entity "xorgate3" for hierarchy "full_adder:g1|sumadd:g1|xorgate3:g1" File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/full_adder.v Line: 67
+Info (12128): Elaborating entity "andgate" for hierarchy "full_adder:g1|sumadd:g1|andgate:g2" File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/full_adder.v Line: 68
+Info (12128): Elaborating entity "orgate3" for hierarchy "full_adder:g1|sumadd:g1|orgate3:g5" File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/full_adder.v Line: 71
+Info (12128): Elaborating entity "sumsub" for hierarchy "full_adder:g1|sumsub:g21" File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/full_adder.v Line: 37
+Info (12128): Elaborating entity "xorgate" for hierarchy "full_adder:g1|sumsub:g21|xorgate:g2" File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/full_adder.v Line: 86
+Info (12128): Elaborating entity "notgate" for hierarchy "full_adder:g1|sumsub:g21|notgate:g3" File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/full_adder.v Line: 87
+Info (12128): Elaborating entity "orgate" for hierarchy "full_adder:g1|sumsub:g21|orgate:g8" File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/full_adder.v Line: 91
+Info (12128): Elaborating entity "mux2x1" for hierarchy "full_adder:g1|mux2x1:g31" File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/full_adder.v Line: 46
+Info (12128): Elaborating entity "logic_unit" for hierarchy "logic_unit:g2" File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu.v Line: 16
+Info (12128): Elaborating entity "mux4x2" for hierarchy "logic_unit:g2|mux4x2:g51" File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/logic_unit.v Line: 52
+Info (12128): Elaborating entity "andgatem8" for hierarchy "logic_unit:g2|mux4x2:g51|andgatem8:g1" File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu.v Line: 157
+Info (12128): Elaborating entity "shift_reg" for hierarchy "shift_reg:g3" File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu.v Line: 17
+Info (12128): Elaborating entity "ShiftL" for hierarchy "shift_reg:g3|ShiftL:g1" File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/shift_reg.v Line: 10
+Info (12128): Elaborating entity "ShiftR" for hierarchy "shift_reg:g3|ShiftR:g2" File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/shift_reg.v Line: 11
+Info (12128): Elaborating entity "RotateL" for hierarchy "shift_reg:g3|RotateL:g3" File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/shift_reg.v Line: 12
+Info (12128): Elaborating entity "RotateR" for hierarchy "shift_reg:g3|RotateR:g4" File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/shift_reg.v Line: 13
+Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:g43" File: C:/Users/RoYaa/Desktop/alu_8bit_project/alu_structural/alu.v Line: 19
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 75 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 21 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 46 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4833 megabytes
+    Info: Processing ended: Fri Dec 22 20:49:38 2023
+    Info: Elapsed time: 00:00:31
+    Info: Total CPU time (on all processors): 00:01:09
+
+

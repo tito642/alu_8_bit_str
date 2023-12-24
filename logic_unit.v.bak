@@ -1,0 +1,44 @@
+module logic_unit(
+input wire A,
+input wire B,
+input wire s,
+output wire Fand,
+output wire For,
+output wire Fxor,
+output wire Fnot);
+
+wire andlogic;
+wire orlogic;
+wire xorlogic;
+wire notlogic;
+
+andgate g1(A,B,Fand);
+orgate  g2(A,B,For);
+xorgate g3(A,B,Fxor);
+notgate g4(A,B,Fnot);
+
+endmodule
+
+module andgate(a,b,f);
+input a,b;
+output f;
+assign f = a&b;
+endmodule
+
+module orgate(a,b,f);
+input a,b;
+output f;
+assign f = a|b;
+endmodule
+
+module notgate(a,f);
+input a;
+output f;
+assign f = ~a;
+endmodule 
+
+module xorgate(a,b,f);
+input a,b;
+output f;
+assign f = a ^ b;
+endmodule

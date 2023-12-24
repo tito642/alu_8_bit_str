@@ -1,0 +1,6 @@
+set_location f_obuf_RNO 1 4 0 #SB_LUT4
+set_location GND -1 -1 -1 #GND
+set_io f 34
+set_io c 29
+set_io b 26
+set_io a 32

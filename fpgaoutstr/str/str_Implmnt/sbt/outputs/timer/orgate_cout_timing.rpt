@@ -1,0 +1,420 @@
+# ******************************************************************************
+
+# iCEcube Static Timer
+
+# Version:            2020.12.27943
+
+# Build Date:         Dec  9 2020 17:33:20
+
+# File Generated:     Dec 22 2023 20:30:53
+
+# Purpose:            Timing Report with critical paths info
+
+# Copyright (C) 2006-2010 by Lattice Semiconductor Corp. All rights reserved.
+
+# ******************************************************************************
+
+Device: iCE40HX1K
+Derating factors (Best:Typical:Worst) :-  ( 0.563724 : 0.623363 : 0.701346 )
+Derating factor used to generate this timing report:  Worst
+Based on the following operating conditions 
+Junction Temperature(degree Celsius): 85
+Core Voltage(V): 1.14
+Process Corner:  Worst
+NOTE:
+Please check both worst-case and best-case scenarios for "Setup Times" 
+and "Hold Times" checks
+Maximum Operating Frequency is: N/A
+
+
+ #####################################################################
+                    3::Datasheet Report
+
+All values are in Picoseconds
+ =====================================================================
+
+                        3.1::Setup Times
+                        ----------------
+
+Data Port  Clock Port  Setup Times  Clock Reference:Phase  
+---------  ----------  -----------  ---------------------  
+
+
+                       3.2::Clock to Out
+                       -----------------
+
+Data Port  Clock Port  Clock to Out  Clock Reference:Phase  
+---------  ----------  ------------  ---------------------  
+
+
+                         3.3::Pad to Pad
+                         ---------------
+
+Port Name (Input)  Port Name (Output)  Pad to Pad  
+-----------------  ------------------  ----------  
+b                  f                   7923        
+c                  f                   7874        
+a                  f                   7789        
+
+
+                         3.4::Hold Times
+                         ---------------
+
+Data Port  Clock Port  Hold Times  Clock Reference:Phase  
+---------  ----------  ----------  ---------------------  
+
+
+               3.5::Minimum Clock to Out
+               -------------------------
+
+Data Port  Clock Port  Minimum Clock to Out  Clock Reference:Phase  
+---------  ----------  --------------------  ---------------------  
+
+
+                 3.6::Minimum Pad To Pad
+                 -----------------------
+
+Port Name (Input)  Port Name (Output)  Minimum Pad To Pad  
+-----------------  ------------------  ------------------  
+a                  f                   7152                
+c                  f                   7243                
+b                  f                   7250                
+
+ =====================================================================
+                    End of Datasheet Report
+ #####################################################################
+
+ #####################################################################
+                    6::Path Details for DataSheet
+ =====================================================================
+
+
+6.3::PI to PO Path Details              
+--------------------------------------------------
+
+6.3.1::Path details for port: f         
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Output Port      : f
+Input Port       : b
+Pad to Pad Delay : 7923
+
+Pad to Pad Path
+pin name                     model name                 delay  cummulative delay  edge  Fanout  
+---------------------------  -------------------------  -----  -----------------  ----  ------  
+b                            orgate_cout                0      0                  RISE  1       
+b_ibuf_iopad/PACKAGEPIN:in   IO_PAD                     0      0                  RISE  1       
+b_ibuf_iopad/DOUT            IO_PAD                     590    590                RISE  1       
+b_ibuf_preio/PADIN           PRE_IO_PIN_TYPE_000001     0      590                RISE  1       
+b_ibuf_preio/DIN0            PRE_IO_PIN_TYPE_000001     617    1207               RISE  1       
+I__16/I                      LocalMux                   0      1207               RISE  1       
+I__16/O                      LocalMux                   330    1537               RISE  1       
+I__17/I                      InMux                      0      1537               RISE  1       
+I__17/O                      InMux                      259    1796               RISE  1       
+f_obuf_RNO_LC_1_4_0/in0      LogicCell40_SEQ_MODE_0000  0      1796               RISE  1       
+f_obuf_RNO_LC_1_4_0/lcout    LogicCell40_SEQ_MODE_0000  449    2245               RISE  1       
+I__8/I                       Odrv4                      0      2245               RISE  1       
+I__8/O                       Odrv4                      351    2596               RISE  1       
+I__9/I                       Span4Mux_s0_h              0      2596               RISE  1       
+I__9/O                       Span4Mux_s0_h              147    2743               RISE  1       
+I__10/I                      LocalMux                   0      2743               RISE  1       
+I__10/O                      LocalMux                   330    3073               RISE  1       
+I__11/I                      IoInMux                    0      3073               RISE  1       
+I__11/O                      IoInMux                    259    3332               RISE  1       
+f_obuf_preio/DOUT0           PRE_IO_PIN_TYPE_011001     0      3332               RISE  1       
+f_obuf_preio/PADOUT          PRE_IO_PIN_TYPE_011001     2237   5570               FALL  1       
+f_obuf_iopad/DIN             IO_PAD                     0      5570               FALL  1       
+f_obuf_iopad/PACKAGEPIN:out  IO_PAD                     2353   7923               FALL  1       
+f                            orgate_cout                0      7923               FALL  1       
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Output Port      : f
+Input Port       : c
+Pad to Pad Delay : 7874
+
+Pad to Pad Path
+pin name                     model name                 delay  cummulative delay  edge  Fanout  
+---------------------------  -------------------------  -----  -----------------  ----  ------  
+c                            orgate_cout                0      0                  RISE  1       
+c_ibuf_iopad/PACKAGEPIN:in   IO_PAD                     0      0                  RISE  1       
+c_ibuf_iopad/DOUT            IO_PAD                     590    590                RISE  1       
+c_ibuf_preio/PADIN           PRE_IO_PIN_TYPE_000001     0      590                RISE  1       
+c_ibuf_preio/DIN0            PRE_IO_PIN_TYPE_000001     617    1207               RISE  1       
+I__14/I                      LocalMux                   0      1207               RISE  1       
+I__14/O                      LocalMux                   330    1537               RISE  1       
+I__15/I                      InMux                      0      1537               RISE  1       
+I__15/O                      InMux                      259    1796               RISE  1       
+f_obuf_RNO_LC_1_4_0/in1      LogicCell40_SEQ_MODE_0000  0      1796               RISE  1       
+f_obuf_RNO_LC_1_4_0/lcout    LogicCell40_SEQ_MODE_0000  400    2196               RISE  1       
+I__8/I                       Odrv4                      0      2196               RISE  1       
+I__8/O                       Odrv4                      351    2547               RISE  1       
+I__9/I                       Span4Mux_s0_h              0      2547               RISE  1       
+I__9/O                       Span4Mux_s0_h              147    2694               RISE  1       
+I__10/I                      LocalMux                   0      2694               RISE  1       
+I__10/O                      LocalMux                   330    3024               RISE  1       
+I__11/I                      IoInMux                    0      3024               RISE  1       
+I__11/O                      IoInMux                    259    3283               RISE  1       
+f_obuf_preio/DOUT0           PRE_IO_PIN_TYPE_011001     0      3283               RISE  1       
+f_obuf_preio/PADOUT          PRE_IO_PIN_TYPE_011001     2237   5520               FALL  1       
+f_obuf_iopad/DIN             IO_PAD                     0      5520               FALL  1       
+f_obuf_iopad/PACKAGEPIN:out  IO_PAD                     2353   7874               FALL  1       
+f                            orgate_cout                0      7874               FALL  1       
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Output Port      : f
+Input Port       : a
+Pad to Pad Delay : 7789
+
+Pad to Pad Path
+pin name                     model name                 delay  cummulative delay  edge  Fanout  
+---------------------------  -------------------------  -----  -----------------  ----  ------  
+a                            orgate_cout                0      0                  RISE  1       
+a_ibuf_iopad/PACKAGEPIN:in   IO_PAD                     0      0                  RISE  1       
+a_ibuf_iopad/DOUT            IO_PAD                     590    590                RISE  1       
+a_ibuf_preio/PADIN           PRE_IO_PIN_TYPE_000001     0      590                RISE  1       
+a_ibuf_preio/DIN0            PRE_IO_PIN_TYPE_000001     617    1207               RISE  1       
+I__12/I                      LocalMux                   0      1207               RISE  1       
+I__12/O                      LocalMux                   330    1537               RISE  1       
+I__13/I                      InMux                      0      1537               RISE  1       
+I__13/O                      InMux                      259    1796               RISE  1       
+f_obuf_RNO_LC_1_4_0/in3      LogicCell40_SEQ_MODE_0000  0      1796               RISE  1       
+f_obuf_RNO_LC_1_4_0/lcout    LogicCell40_SEQ_MODE_0000  316    2112               RISE  1       
+I__8/I                       Odrv4                      0      2112               RISE  1       
+I__8/O                       Odrv4                      351    2463               RISE  1       
+I__9/I                       Span4Mux_s0_h              0      2463               RISE  1       
+I__9/O                       Span4Mux_s0_h              147    2610               RISE  1       
+I__10/I                      LocalMux                   0      2610               RISE  1       
+I__10/O                      LocalMux                   330    2940               RISE  1       
+I__11/I                      IoInMux                    0      2940               RISE  1       
+I__11/O                      IoInMux                    259    3199               RISE  1       
+f_obuf_preio/DOUT0           PRE_IO_PIN_TYPE_011001     0      3199               RISE  1       
+f_obuf_preio/PADOUT          PRE_IO_PIN_TYPE_011001     2237   5436               FALL  1       
+f_obuf_iopad/DIN             IO_PAD                     0      5436               FALL  1       
+f_obuf_iopad/PACKAGEPIN:out  IO_PAD                     2353   7789               FALL  1       
+f                            orgate_cout                0      7789               FALL  1       
+
+6.6::Min PI to PO Path Details          
+--------------------------------------------------
+
+6.6.1::Path details for port: f         
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Output Port      : f
+Input Port       : a
+Pad to Pad Delay : 7152
+
+Pad to Pad Path
+pin name                     model name                 delay  cummulative delay  edge  Fanout  
+---------------------------  -------------------------  -----  -----------------  ----  ------  
+a                            orgate_cout                0      0                  FALL  1       
+a_ibuf_iopad/PACKAGEPIN:in   IO_PAD                     0      0                  FALL  1       
+a_ibuf_iopad/DOUT            IO_PAD                     540    540                FALL  1       
+a_ibuf_preio/PADIN           PRE_IO_PIN_TYPE_000001     0      540                FALL  1       
+a_ibuf_preio/DIN0            PRE_IO_PIN_TYPE_000001     463    1003               FALL  1       
+I__12/I                      LocalMux                   0      1003               FALL  1       
+I__12/O                      LocalMux                   309    1311               FALL  1       
+I__13/I                      InMux                      0      1311               FALL  1       
+I__13/O                      InMux                      217    1529               FALL  1       
+f_obuf_RNO_LC_1_4_0/in3      LogicCell40_SEQ_MODE_0000  0      1529               FALL  1       
+f_obuf_RNO_LC_1_4_0/lcout    LogicCell40_SEQ_MODE_0000  288    1816               FALL  1       
+I__8/I                       Odrv4                      0      1816               FALL  1       
+I__8/O                       Odrv4                      372    2188               FALL  1       
+I__9/I                       Span4Mux_s0_h              0      2188               FALL  1       
+I__9/O                       Span4Mux_s0_h              140    2328               FALL  1       
+I__10/I                      LocalMux                   0      2328               FALL  1       
+I__10/O                      LocalMux                   309    2637               FALL  1       
+I__11/I                      IoInMux                    0      2637               FALL  1       
+I__11/O                      IoInMux                    217    2854               FALL  1       
+f_obuf_preio/DOUT0           PRE_IO_PIN_TYPE_011001     0      2854               FALL  1       
+f_obuf_preio/PADOUT          PRE_IO_PIN_TYPE_011001     2006   4860               RISE  1       
+f_obuf_iopad/DIN             IO_PAD                     0      4860               RISE  1       
+f_obuf_iopad/PACKAGEPIN:out  IO_PAD                     2292   7152               RISE  1       
+f                            orgate_cout                0      7152               RISE  1       
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Output Port      : f
+Input Port       : c
+Pad to Pad Delay : 7243
+
+Pad to Pad Path
+pin name                     model name                 delay  cummulative delay  edge  Fanout  
+---------------------------  -------------------------  -----  -----------------  ----  ------  
+c                            orgate_cout                0      0                  FALL  1       
+c_ibuf_iopad/PACKAGEPIN:in   IO_PAD                     0      0                  FALL  1       
+c_ibuf_iopad/DOUT            IO_PAD                     540    540                FALL  1       
+c_ibuf_preio/PADIN           PRE_IO_PIN_TYPE_000001     0      540                FALL  1       
+c_ibuf_preio/DIN0            PRE_IO_PIN_TYPE_000001     463    1003               FALL  1       
+I__14/I                      LocalMux                   0      1003               FALL  1       
+I__14/O                      LocalMux                   309    1311               FALL  1       
+I__15/I                      InMux                      0      1311               FALL  1       
+I__15/O                      InMux                      217    1529               FALL  1       
+f_obuf_RNO_LC_1_4_0/in1      LogicCell40_SEQ_MODE_0000  0      1529               FALL  1       
+f_obuf_RNO_LC_1_4_0/lcout    LogicCell40_SEQ_MODE_0000  379    1908               FALL  1       
+I__8/I                       Odrv4                      0      1908               FALL  1       
+I__8/O                       Odrv4                      372    2279               FALL  1       
+I__9/I                       Span4Mux_s0_h              0      2279               FALL  1       
+I__9/O                       Span4Mux_s0_h              140    2420               FALL  1       
+I__10/I                      LocalMux                   0      2420               FALL  1       
+I__10/O                      LocalMux                   309    2728               FALL  1       
+I__11/I                      IoInMux                    0      2728               FALL  1       
+I__11/O                      IoInMux                    217    2946               FALL  1       
+f_obuf_preio/DOUT0           PRE_IO_PIN_TYPE_011001     0      2946               FALL  1       
+f_obuf_preio/PADOUT          PRE_IO_PIN_TYPE_011001     2006   4951               RISE  1       
+f_obuf_iopad/DIN             IO_PAD                     0      4951               RISE  1       
+f_obuf_iopad/PACKAGEPIN:out  IO_PAD                     2292   7243               RISE  1       
+f                            orgate_cout                0      7243               RISE  1       
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Output Port      : f
+Input Port       : b
+Pad to Pad Delay : 7250
+
+Pad to Pad Path
+pin name                     model name                 delay  cummulative delay  edge  Fanout  
+---------------------------  -------------------------  -----  -----------------  ----  ------  
+b                            orgate_cout                0      0                  FALL  1       
+b_ibuf_iopad/PACKAGEPIN:in   IO_PAD                     0      0                  FALL  1       
+b_ibuf_iopad/DOUT            IO_PAD                     540    540                FALL  1       
+b_ibuf_preio/PADIN           PRE_IO_PIN_TYPE_000001     0      540                FALL  1       
+b_ibuf_preio/DIN0            PRE_IO_PIN_TYPE_000001     463    1003               FALL  1       
+I__16/I                      LocalMux                   0      1003               FALL  1       
+I__16/O                      LocalMux                   309    1311               FALL  1       
+I__17/I                      InMux                      0      1311               FALL  1       
+I__17/O                      InMux                      217    1529               FALL  1       
+f_obuf_RNO_LC_1_4_0/in0      LogicCell40_SEQ_MODE_0000  0      1529               FALL  1       
+f_obuf_RNO_LC_1_4_0/lcout    LogicCell40_SEQ_MODE_0000  386    1915               FALL  1       
+I__8/I                       Odrv4                      0      1915               FALL  1       
+I__8/O                       Odrv4                      372    2286               FALL  1       
+I__9/I                       Span4Mux_s0_h              0      2286               FALL  1       
+I__9/O                       Span4Mux_s0_h              140    2427               FALL  1       
+I__10/I                      LocalMux                   0      2427               FALL  1       
+I__10/O                      LocalMux                   309    2735               FALL  1       
+I__11/I                      IoInMux                    0      2735               FALL  1       
+I__11/O                      IoInMux                    217    2953               FALL  1       
+f_obuf_preio/DOUT0           PRE_IO_PIN_TYPE_011001     0      2953               FALL  1       
+f_obuf_preio/PADOUT          PRE_IO_PIN_TYPE_011001     2006   4958               RISE  1       
+f_obuf_iopad/DIN             IO_PAD                     0      4958               RISE  1       
+f_obuf_iopad/PACKAGEPIN:out  IO_PAD                     2292   7250               RISE  1       
+f                            orgate_cout                0      7250               RISE  1       
+
+
+ =====================================================================
+                    End of Path Details for Datasheet
+ #####################################################################
+
+##################################################################### 
+                    Detailed Setup Report for all timing paths 
+===================================================================== 
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : a
+Path End         : f
+Setup Constraint : +INF
+Path slack       : +INF
+
+End-of-path required time (ps)           +INF
+
+Launch Clock Arrival Time (DEFAULT:R#0)      0
++ Launch Clock Source Latency                0
++ Input Delay                                0
++ Data Path Delay                         7495
+---------------------------------------   ---- 
+End-of-path arrival time (ps)             7495
+ 
+Data path
+pin name                     model name                 delay  cumulative delay  slack  edge  Fanout
+---------------------------  -------------------------  -----  ----------------  -----  ----  ------
+a                            orgate_cout                    0                 0   +INF  RISE       1
+a_ibuf_iopad/PACKAGEPIN:in   IO_PAD                         0                 0   +INF  RISE       1
+a_ibuf_iopad/DOUT            IO_PAD                       590               590   +INF  RISE       1
+a_ibuf_preio/PADIN           PRE_IO_PIN_TYPE_000001         0               590   +INF  RISE       1
+a_ibuf_preio/DIN0            PRE_IO_PIN_TYPE_000001       463              1053   +INF  FALL       1
+I__12/I                      LocalMux                       0              1053   +INF  FALL       1
+I__12/O                      LocalMux                     309              1361   +INF  FALL       1
+I__13/I                      InMux                          0              1361   +INF  FALL       1
+I__13/O                      InMux                        217              1579   +INF  FALL       1
+f_obuf_RNO_LC_1_4_0/in3      LogicCell40_SEQ_MODE_0000      0              1579   +INF  FALL       1
+f_obuf_RNO_LC_1_4_0/lcout    LogicCell40_SEQ_MODE_0000    288              1866   +INF  FALL       1
+I__8/I                       Odrv4                          0              1866   +INF  FALL       1
+I__8/O                       Odrv4                        372              2238   +INF  FALL       1
+I__9/I                       Span4Mux_s0_h                  0              2238   +INF  FALL       1
+I__9/O                       Span4Mux_s0_h                140              2378   +INF  FALL       1
+I__10/I                      LocalMux                       0              2378   +INF  FALL       1
+I__10/O                      LocalMux                     309              2687   +INF  FALL       1
+I__11/I                      IoInMux                        0              2687   +INF  FALL       1
+I__11/O                      IoInMux                      217              2904   +INF  FALL       1
+f_obuf_preio/DOUT0           PRE_IO_PIN_TYPE_011001         0              2904   +INF  FALL       1
+f_obuf_preio/PADOUT          PRE_IO_PIN_TYPE_011001      2237              5142   +INF  FALL       1
+f_obuf_iopad/DIN             IO_PAD                         0              5142   +INF  FALL       1
+f_obuf_iopad/PACKAGEPIN:out  IO_PAD                      2353              7495   +INF  FALL       1
+f                            orgate_cout                    0              7495   +INF  FALL       1
+
+===================================================================== 
+                    End of Detailed Setup Report for all timing paths 
+##################################################################### 
+
+##################################################################### 
+                    Detailed Hold Report for all timing paths 
+===================================================================== 
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : a
+Path End         : f
+Hold Constraint  : -INF
+Path slack       : +INF
+
+End-of-path required time (ps)           +INF
+
+Launch Clock Arrival Time (DEFAULT:R#0)      0
++ Launch Clock Source Latency                0
++ Input Delay                                0
++ Data Path Delay                         7495
+---------------------------------------   ---- 
+End-of-path arrival time (ps)             7495
+ 
+Data path
+pin name                     model name                 delay  cumulative delay  slack  edge  Fanout
+---------------------------  -------------------------  -----  ----------------  -----  ----  ------
+a                            orgate_cout                    0                 0   +INF  RISE       1
+a_ibuf_iopad/PACKAGEPIN:in   IO_PAD                         0                 0   +INF  RISE       1
+a_ibuf_iopad/DOUT            IO_PAD                       590               590   +INF  RISE       1
+a_ibuf_preio/PADIN           PRE_IO_PIN_TYPE_000001         0               590   +INF  RISE       1
+a_ibuf_preio/DIN0            PRE_IO_PIN_TYPE_000001       463              1053   +INF  FALL       1
+I__12/I                      LocalMux                       0              1053   +INF  FALL       1
+I__12/O                      LocalMux                     309              1361   +INF  FALL       1
+I__13/I                      InMux                          0              1361   +INF  FALL       1
+I__13/O                      InMux                        217              1579   +INF  FALL       1
+f_obuf_RNO_LC_1_4_0/in3      LogicCell40_SEQ_MODE_0000      0              1579   +INF  FALL       1
+f_obuf_RNO_LC_1_4_0/lcout    LogicCell40_SEQ_MODE_0000    288              1866   +INF  FALL       1
+I__8/I                       Odrv4                          0              1866   +INF  FALL       1
+I__8/O                       Odrv4                        372              2238   +INF  FALL       1
+I__9/I                       Span4Mux_s0_h                  0              2238   +INF  FALL       1
+I__9/O                       Span4Mux_s0_h                140              2378   +INF  FALL       1
+I__10/I                      LocalMux                       0              2378   +INF  FALL       1
+I__10/O                      LocalMux                     309              2687   +INF  FALL       1
+I__11/I                      IoInMux                        0              2687   +INF  FALL       1
+I__11/O                      IoInMux                      217              2904   +INF  FALL       1
+f_obuf_preio/DOUT0           PRE_IO_PIN_TYPE_011001         0              2904   +INF  FALL       1
+f_obuf_preio/PADOUT          PRE_IO_PIN_TYPE_011001      2237              5142   +INF  FALL       1
+f_obuf_iopad/DIN             IO_PAD                         0              5142   +INF  FALL       1
+f_obuf_iopad/PACKAGEPIN:out  IO_PAD                      2353              7495   +INF  FALL       1
+f                            orgate_cout                    0              7495   +INF  FALL       1
+
+===================================================================== 
+                    End of Detailed Hold Report for all timing paths 
+##################################################################### 
+
+##################################################################### 
+                    End of Timing Report 
+##################################################################### 
+

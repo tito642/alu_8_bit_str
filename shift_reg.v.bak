@@ -1,0 +1,42 @@
+module shift_reg(
+input wire [7:0] A,
+output wire [7:0] SL,
+output wire [7:0] SR,
+output wire [7:0] RL,
+output wire [7:0] Rr);
+
+
+
+
+
+endmodule
+
+
+
+
+
+module ShiftL(a,f);
+input wire [7:0] a;
+output wire [7:0] f;
+assign f[7] = 0;
+orgate g1(a[7],~a[5],f[6]);
+orgate g2(a[6],~a[4],f[5]);
+orgate g3(a[5],~a[3],f[4]);
+orgate g4(a[4],~a[2],f[3]);
+orgate g5(a[3],~a[1],f[2]);
+orgate g6(a[2],~a[0],f[1]);
+assign f[0] = a[1];
+endmodule
+
+module ShiftR(a,f);
+input wire [7:0] a;
+output wire [7:0] f;
+assign f[7] = a[6];
+orgate g_1(~a[7],a[5],f[6]);
+orgate g_2(~a[6],a[4],f[5]);
+orgate g_3(~a[5],a[3],f[4]);
+orgate g_4(~a[4],a[2],f[3]);
+orgate g_5(~a[3],a[1],f[2]);
+orgate g_6(~a[2],a[0],f[1]);
+assign f[0] = 0;
+endmodule

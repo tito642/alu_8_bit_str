@@ -1,0 +1,7 @@
+ble_pack f_obuf_RNO_LC_1_4_0 { f_obuf_RNO }
+clb_pack LT_1_4 { f_obuf_RNO_LC_1_4_0 }
+set_location LT_1_4 1 4
+set_io f 34
+set_io c 29
+set_io b 26
+set_io a 32

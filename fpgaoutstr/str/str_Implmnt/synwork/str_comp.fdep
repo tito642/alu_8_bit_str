@@ -1,0 +1,48 @@
+#OPTIONS:"|-layerid|0|-orig_srs|C:\\Users\\RoYaa\\Desktop\\alu_8bit_project\\alu_structural\\fpgaoutstr\\str\\str_Implmnt\\synwork\\str_comp.srs|-prodtype|synplify_pro|-primux|-fixsmult|-infer_seqShift|-ice|-sdff_counter|-nram|-divnmod|-nostructver|-I|C:\\Users\\RoYaa\\Desktop\\alu_8bit_project\\alu_structural\\fpgaoutstr\\str\\|-I|C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib|-v2001|-devicelib|C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\generic\\sb_ice40.v|-encrypt|-pro|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-lib|work|-lib|work|-lib|work|-lib|work"
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\bin64\\c_ver.exe":1700328115
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\generic\\sb_ice40.v":1700328119
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vlog\\hypermods.v":1700328121
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vlog\\umr_capim.v":1700328121
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vlog\\scemi_objects.v":1700328121
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vlog\\scemi_pipes.svh":1700328121
+#CUR:"C:\\Users\\RoYaa\\Desktop\\alu_8bit_project\\alu_structural\\alu.v":1703143790
+#CUR:"C:\\Users\\RoYaa\\Desktop\\alu_8bit_project\\alu_structural\\full_adder.v":1703143790
+#CUR:"C:\\Users\\RoYaa\\Desktop\\alu_8bit_project\\alu_structural\\logic_unit.v":1703143790
+#CUR:"C:\\Users\\RoYaa\\Desktop\\alu_8bit_project\\alu_structural\\shift_reg.v":1703143792
+0			"C:\Users\RoYaa\Desktop\alu_8bit_project\alu_structural\alu.v" verilog
+1			"C:\Users\RoYaa\Desktop\alu_8bit_project\alu_structural\full_adder.v" verilog
+2			"C:\Users\RoYaa\Desktop\alu_8bit_project\alu_structural\logic_unit.v" verilog
+3			"C:\Users\RoYaa\Desktop\alu_8bit_project\alu_structural\shift_reg.v" verilog
+#Dependency Lists(Uses List)
+0 3 2 1
+1 0
+2 0
+3 0
+#Dependency Lists(Users Of)
+0 3 2 1
+1 0
+2 0
+3 0
+#Design Unit to File Association
+module work RotateR 3
+module work RotateL 3
+module work ShiftR 3
+module work ShiftL 3
+module work sumsub 1
+module work sumadd 1
+module work mux4x2 0
+module work notgate 0
+module work orgate_cout 0
+module work andgatem4 0
+module work andgatem8 0
+module work andgate 0
+module work orgate3 0
+module work orgate 0
+module work xorgate3 0
+module work xorgate 0
+module work mux2x1 0
+module work alu 0
+module work control_unit 0
+module work shift_reg 3
+module work logic_unit 2
+module work full_adder 1

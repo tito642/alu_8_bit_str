@@ -1,0 +1,47 @@
+`timescale 1ns/1ps
+module full_adder_tb;
+
+  reg [7:0] A_tb, B_tb;
+  wire [7:0] sumout_add_tb, sumout_sub_tb;
+
+  // Instantiate the full_adder module
+  full_adder DUT(
+    .A(A_tb),
+    .B(B_tb),
+    .sumout_add(sumout_add_tb),
+    .sumout_sub(sumout_sub_tb)
+  );
+
+  // Clock generation
+  reg clk_tb = 0;
+  always #5 clk_tb = ~clk_tb;
+
+  // Test vectors
+  initial begin
+    $monitor("Time=%0t A=%b B=%b SumAdd=%b SumSub=%b", $time, A_tb, B_tb, sumout_add_tb, sumout_sub_tb);
+
+    // Test case 1
+    A_tb = 8'b01101010;
+    B_tb = 8'b11010101;
+    #10;
+
+    // Test case 2
+    A_tb = 8'b11110000;
+    B_tb = 8'b00001111;
+    #10;
+
+    // Test case 3
+    A_tb = 8'b01010101;
+    B_tb = 8'b10101010;
+    #10;
+
+    // Add more test cases as needed
+
+    // End simulation
+    $stop;
+  end
+
+  // Clock driver
+  always #1 clk_tb = ~clk_tb;
+
+endmodule

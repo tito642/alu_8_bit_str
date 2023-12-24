@@ -1,0 +1,2626 @@
+|alu
+A[0] => A[0].IN3
+A[1] => A[1].IN3
+A[2] => A[2].IN3
+A[3] => A[3].IN3
+A[4] => A[4].IN3
+A[5] => A[5].IN3
+A[6] => A[6].IN3
+A[7] => A[7].IN3
+B[0] => B[0].IN2
+B[1] => B[1].IN2
+B[2] => B[2].IN2
+B[3] => B[3].IN2
+B[4] => B[4].IN2
+B[5] => B[5].IN2
+B[6] => B[6].IN2
+B[7] => B[7].IN2
+s[0] => s[0].IN8
+s[1] => s[1].IN8
+s[2] => s[2].IN2
+s[3] => s[3].IN3
+clk => alu_out[0]~reg0.CLK
+clk => alu_out[1]~reg0.CLK
+clk => alu_out[2]~reg0.CLK
+clk => alu_out[3]~reg0.CLK
+clk => alu_out[4]~reg0.CLK
+clk => alu_out[5]~reg0.CLK
+clk => alu_out[6]~reg0.CLK
+clk => alu_out[7]~reg0.CLK
+alu_out[0] <= alu_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+alu_out[1] <= alu_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+alu_out[2] <= alu_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+alu_out[3] <= alu_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+alu_out[4] <= alu_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+alu_out[5] <= alu_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+alu_out[6] <= alu_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+alu_out[7] <= alu_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1
+A[0] => A[0].IN2
+A[1] => A[1].IN2
+A[2] => A[2].IN2
+A[3] => A[3].IN2
+A[4] => A[4].IN2
+A[5] => A[5].IN2
+A[6] => A[6].IN2
+A[7] => A[7].IN2
+B[0] => B[0].IN2
+B[1] => B[1].IN2
+B[2] => B[2].IN2
+B[3] => B[3].IN2
+B[4] => B[4].IN2
+B[5] => B[5].IN2
+B[6] => B[6].IN2
+B[7] => B[7].IN2
+cin => cin.IN11
+sum[0] <= mux2x1:g31.port3
+sum[1] <= mux2x1:g32.port3
+sum[2] <= mux2x1:g33.port3
+sum[3] <= mux2x1:g34.port3
+sum[4] <= mux2x1:g35.port3
+sum[5] <= mux2x1:g36.port3
+sum[6] <= mux2x1:g37.port3
+sum[7] <= mux2x1:g38.port3
+
+
+|alu|full_adder:g1|sumadd:g1
+A => A.IN3
+B => B.IN3
+C => C.IN3
+s <= xorgate3:g1.port3
+co <= orgate3:g5.port3
+
+
+|alu|full_adder:g1|sumadd:g1|xorgate3:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g1|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g1|andgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g1|andgate:g4
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g1|orgate3:g5
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g2
+A => A.IN3
+B => B.IN3
+C => C.IN3
+s <= xorgate3:g1.port3
+co <= orgate3:g5.port3
+
+
+|alu|full_adder:g1|sumadd:g2|xorgate3:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g2|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g2|andgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g2|andgate:g4
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g2|orgate3:g5
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g3
+A => A.IN3
+B => B.IN3
+C => C.IN3
+s <= xorgate3:g1.port3
+co <= orgate3:g5.port3
+
+
+|alu|full_adder:g1|sumadd:g3|xorgate3:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g3|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g3|andgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g3|andgate:g4
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g3|orgate3:g5
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g4
+A => A.IN3
+B => B.IN3
+C => C.IN3
+s <= xorgate3:g1.port3
+co <= orgate3:g5.port3
+
+
+|alu|full_adder:g1|sumadd:g4|xorgate3:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g4|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g4|andgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g4|andgate:g4
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g4|orgate3:g5
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g5
+A => A.IN3
+B => B.IN3
+C => C.IN3
+s <= xorgate3:g1.port3
+co <= orgate3:g5.port3
+
+
+|alu|full_adder:g1|sumadd:g5|xorgate3:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g5|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g5|andgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g5|andgate:g4
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g5|orgate3:g5
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g6
+A => A.IN3
+B => B.IN3
+C => C.IN3
+s <= xorgate3:g1.port3
+co <= orgate3:g5.port3
+
+
+|alu|full_adder:g1|sumadd:g6|xorgate3:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g6|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g6|andgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g6|andgate:g4
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g6|orgate3:g5
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g7
+A => A.IN3
+B => B.IN3
+C => C.IN3
+s <= xorgate3:g1.port3
+co <= orgate3:g5.port3
+
+
+|alu|full_adder:g1|sumadd:g7|xorgate3:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g7|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g7|andgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g7|andgate:g4
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g7|orgate3:g5
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g8
+A => A.IN3
+B => B.IN3
+C => C.IN3
+s <= xorgate3:g1.port3
+co <= orgate3:g5.port3
+
+
+|alu|full_adder:g1|sumadd:g8|xorgate3:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g8|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g8|andgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g8|andgate:g4
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumadd:g8|orgate3:g5
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g21
+A => A.IN2
+B => B.IN2
+C => C.IN1
+s <= g10.DB_MAX_OUTPUT_PORT_TYPE
+co <= orgate:g8.port2
+
+
+|alu|full_adder:g1|sumsub:g21|xorgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g21|notgate:g3
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g21|andgate:g4
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g21|notgate:g5
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g21|andgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g21|orgate:g8
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g22
+A => A.IN2
+B => B.IN2
+C => C.IN1
+s <= g10.DB_MAX_OUTPUT_PORT_TYPE
+co <= orgate:g8.port2
+
+
+|alu|full_adder:g1|sumsub:g22|xorgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g22|notgate:g3
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g22|andgate:g4
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g22|notgate:g5
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g22|andgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g22|orgate:g8
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g23
+A => A.IN2
+B => B.IN2
+C => C.IN1
+s <= g10.DB_MAX_OUTPUT_PORT_TYPE
+co <= orgate:g8.port2
+
+
+|alu|full_adder:g1|sumsub:g23|xorgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g23|notgate:g3
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g23|andgate:g4
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g23|notgate:g5
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g23|andgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g23|orgate:g8
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g24
+A => A.IN2
+B => B.IN2
+C => C.IN1
+s <= g10.DB_MAX_OUTPUT_PORT_TYPE
+co <= orgate:g8.port2
+
+
+|alu|full_adder:g1|sumsub:g24|xorgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g24|notgate:g3
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g24|andgate:g4
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g24|notgate:g5
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g24|andgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g24|orgate:g8
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g25
+A => A.IN2
+B => B.IN2
+C => C.IN1
+s <= g10.DB_MAX_OUTPUT_PORT_TYPE
+co <= orgate:g8.port2
+
+
+|alu|full_adder:g1|sumsub:g25|xorgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g25|notgate:g3
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g25|andgate:g4
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g25|notgate:g5
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g25|andgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g25|orgate:g8
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g26
+A => A.IN2
+B => B.IN2
+C => C.IN1
+s <= g10.DB_MAX_OUTPUT_PORT_TYPE
+co <= orgate:g8.port2
+
+
+|alu|full_adder:g1|sumsub:g26|xorgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g26|notgate:g3
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g26|andgate:g4
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g26|notgate:g5
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g26|andgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g26|orgate:g8
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g27
+A => A.IN2
+B => B.IN2
+C => C.IN1
+s <= g10.DB_MAX_OUTPUT_PORT_TYPE
+co <= orgate:g8.port2
+
+
+|alu|full_adder:g1|sumsub:g27|xorgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g27|notgate:g3
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g27|andgate:g4
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g27|notgate:g5
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g27|andgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g27|orgate:g8
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g28
+A => A.IN2
+B => B.IN2
+C => C.IN1
+s <= g10.DB_MAX_OUTPUT_PORT_TYPE
+co <= orgate:g8.port2
+
+
+|alu|full_adder:g1|sumsub:g28|xorgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g28|notgate:g3
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g28|andgate:g4
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g28|notgate:g5
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g28|andgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|sumsub:g28|orgate:g8
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g31
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|full_adder:g1|mux2x1:g31|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g31|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g31|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g32
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|full_adder:g1|mux2x1:g32|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g32|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g32|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g33
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|full_adder:g1|mux2x1:g33|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g33|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g33|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g34
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|full_adder:g1|mux2x1:g34|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g34|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g34|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g35
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|full_adder:g1|mux2x1:g35|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g35|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g35|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g36
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|full_adder:g1|mux2x1:g36|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g36|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g36|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g37
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|full_adder:g1|mux2x1:g37|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g37|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g37|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g38
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|full_adder:g1|mux2x1:g38|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g38|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g38|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g39
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|full_adder:g1|mux2x1:g39|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g39|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|full_adder:g1|mux2x1:g39|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2
+A[0] => A[0].IN3
+A[1] => A[1].IN3
+A[2] => A[2].IN3
+A[3] => A[3].IN3
+A[4] => A[4].IN3
+A[5] => A[5].IN3
+A[6] => A[6].IN3
+A[7] => A[7].IN3
+B[0] => B[0].IN4
+B[1] => B[1].IN4
+B[2] => B[2].IN4
+B[3] => B[3].IN4
+B[4] => B[4].IN4
+B[5] => B[5].IN4
+B[6] => B[6].IN4
+B[7] => B[7].IN4
+s3 => s3.IN8
+s2 => s2.IN8
+logic_out[0] <= mux4x2:g51.port6
+logic_out[1] <= mux4x2:g52.port6
+logic_out[2] <= mux4x2:g53.port6
+logic_out[3] <= mux4x2:g54.port6
+logic_out[4] <= mux4x2:g55.port6
+logic_out[5] <= mux4x2:g56.port6
+logic_out[6] <= mux4x2:g57.port6
+logic_out[7] <= mux4x2:g58.port6
+
+
+|alu|logic_unit:g2|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|andgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|andgate:g4
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|andgate:g5
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|andgate:g6
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|andgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|andgate:g8
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|orgate:g21
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|orgate:g22
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|orgate:g23
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|orgate:g24
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|orgate:g25
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|orgate:g26
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|orgate:g27
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|orgate:g28
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|xorgate:g31
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|xorgate:g32
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|xorgate:g33
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|xorgate:g34
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|xorgate:g35
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|xorgate:g36
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|xorgate:g37
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|xorgate:g38
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|notgate:g41
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|notgate:g42
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|notgate:g43
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|notgate:g44
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|notgate:g45
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|notgate:g46
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|notgate:g47
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|notgate:g48
+a => f.DATAIN
+f <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g51
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+s3 => s3.IN2
+s2 => s2.IN2
+f <= orgate:g7.port2
+
+
+|alu|logic_unit:g2|mux4x2:g51|andgatem8:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g51|andgatem8:g2
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g51|andgatem8:g3
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g51|andgatem8:g4
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g51|orgate:g5
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g51|orgate:g6
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g51|orgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g52
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+s3 => s3.IN2
+s2 => s2.IN2
+f <= orgate:g7.port2
+
+
+|alu|logic_unit:g2|mux4x2:g52|andgatem8:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g52|andgatem8:g2
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g52|andgatem8:g3
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g52|andgatem8:g4
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g52|orgate:g5
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g52|orgate:g6
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g52|orgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g53
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+s3 => s3.IN2
+s2 => s2.IN2
+f <= orgate:g7.port2
+
+
+|alu|logic_unit:g2|mux4x2:g53|andgatem8:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g53|andgatem8:g2
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g53|andgatem8:g3
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g53|andgatem8:g4
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g53|orgate:g5
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g53|orgate:g6
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g53|orgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g54
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+s3 => s3.IN2
+s2 => s2.IN2
+f <= orgate:g7.port2
+
+
+|alu|logic_unit:g2|mux4x2:g54|andgatem8:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g54|andgatem8:g2
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g54|andgatem8:g3
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g54|andgatem8:g4
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g54|orgate:g5
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g54|orgate:g6
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g54|orgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g55
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+s3 => s3.IN2
+s2 => s2.IN2
+f <= orgate:g7.port2
+
+
+|alu|logic_unit:g2|mux4x2:g55|andgatem8:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g55|andgatem8:g2
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g55|andgatem8:g3
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g55|andgatem8:g4
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g55|orgate:g5
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g55|orgate:g6
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g55|orgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g56
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+s3 => s3.IN2
+s2 => s2.IN2
+f <= orgate:g7.port2
+
+
+|alu|logic_unit:g2|mux4x2:g56|andgatem8:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g56|andgatem8:g2
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g56|andgatem8:g3
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g56|andgatem8:g4
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g56|orgate:g5
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g56|orgate:g6
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g56|orgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g57
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+s3 => s3.IN2
+s2 => s2.IN2
+f <= orgate:g7.port2
+
+
+|alu|logic_unit:g2|mux4x2:g57|andgatem8:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g57|andgatem8:g2
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g57|andgatem8:g3
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g57|andgatem8:g4
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g57|orgate:g5
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g57|orgate:g6
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g57|orgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g58
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+s3 => s3.IN2
+s2 => s2.IN2
+f <= orgate:g7.port2
+
+
+|alu|logic_unit:g2|mux4x2:g58|andgatem8:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g58|andgatem8:g2
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g58|andgatem8:g3
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g58|andgatem8:g4
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g58|orgate:g5
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g58|orgate:g6
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|logic_unit:g2|mux4x2:g58|orgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3
+A[0] => A[0].IN4
+A[1] => A[1].IN4
+A[2] => A[2].IN4
+A[3] => A[3].IN4
+A[4] => A[4].IN4
+A[5] => A[5].IN4
+A[6] => A[6].IN4
+A[7] => A[7].IN4
+s3 => s3.IN8
+s2 => s2.IN8
+reg_out[0] <= mux4x2:g51.port6
+reg_out[1] <= mux4x2:g52.port6
+reg_out[2] <= mux4x2:g53.port6
+reg_out[3] <= mux4x2:g54.port6
+reg_out[4] <= mux4x2:g55.port6
+reg_out[5] <= mux4x2:g56.port6
+reg_out[6] <= mux4x2:g57.port6
+reg_out[7] <= mux4x2:g58.port6
+
+
+|alu|shift_reg:g3|ShiftL:g1
+a[0] => f[1].DATAIN
+a[1] => f[2].DATAIN
+a[2] => f[3].DATAIN
+a[3] => f[4].DATAIN
+a[4] => f[5].DATAIN
+a[5] => f[6].DATAIN
+a[6] => f[7].DATAIN
+a[7] => ~NO_FANOUT~
+f[0] <= <GND>
+f[1] <= a[0].DB_MAX_OUTPUT_PORT_TYPE
+f[2] <= a[1].DB_MAX_OUTPUT_PORT_TYPE
+f[3] <= a[2].DB_MAX_OUTPUT_PORT_TYPE
+f[4] <= a[3].DB_MAX_OUTPUT_PORT_TYPE
+f[5] <= a[4].DB_MAX_OUTPUT_PORT_TYPE
+f[6] <= a[5].DB_MAX_OUTPUT_PORT_TYPE
+f[7] <= a[6].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|ShiftR:g2
+a[0] => ~NO_FANOUT~
+a[1] => f[0].DATAIN
+a[2] => f[1].DATAIN
+a[3] => f[2].DATAIN
+a[4] => f[3].DATAIN
+a[5] => f[4].DATAIN
+a[6] => f[5].DATAIN
+a[7] => f[6].DATAIN
+f[0] <= a[1].DB_MAX_OUTPUT_PORT_TYPE
+f[1] <= a[2].DB_MAX_OUTPUT_PORT_TYPE
+f[2] <= a[3].DB_MAX_OUTPUT_PORT_TYPE
+f[3] <= a[4].DB_MAX_OUTPUT_PORT_TYPE
+f[4] <= a[5].DB_MAX_OUTPUT_PORT_TYPE
+f[5] <= a[6].DB_MAX_OUTPUT_PORT_TYPE
+f[6] <= a[7].DB_MAX_OUTPUT_PORT_TYPE
+f[7] <= <GND>
+
+
+|alu|shift_reg:g3|RotateL:g3
+a[0] => f[1].DATAIN
+a[1] => f[2].DATAIN
+a[2] => f[3].DATAIN
+a[3] => f[4].DATAIN
+a[4] => f[5].DATAIN
+a[5] => f[6].DATAIN
+a[6] => f[7].DATAIN
+a[7] => f[0].DATAIN
+f[0] <= a[7].DB_MAX_OUTPUT_PORT_TYPE
+f[1] <= a[0].DB_MAX_OUTPUT_PORT_TYPE
+f[2] <= a[1].DB_MAX_OUTPUT_PORT_TYPE
+f[3] <= a[2].DB_MAX_OUTPUT_PORT_TYPE
+f[4] <= a[3].DB_MAX_OUTPUT_PORT_TYPE
+f[5] <= a[4].DB_MAX_OUTPUT_PORT_TYPE
+f[6] <= a[5].DB_MAX_OUTPUT_PORT_TYPE
+f[7] <= a[6].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|RotateR:g4
+a[0] => f[7].DATAIN
+a[1] => f[0].DATAIN
+a[2] => f[1].DATAIN
+a[3] => f[2].DATAIN
+a[4] => f[3].DATAIN
+a[5] => f[4].DATAIN
+a[6] => f[5].DATAIN
+a[7] => f[6].DATAIN
+f[0] <= a[1].DB_MAX_OUTPUT_PORT_TYPE
+f[1] <= a[2].DB_MAX_OUTPUT_PORT_TYPE
+f[2] <= a[3].DB_MAX_OUTPUT_PORT_TYPE
+f[3] <= a[4].DB_MAX_OUTPUT_PORT_TYPE
+f[4] <= a[5].DB_MAX_OUTPUT_PORT_TYPE
+f[5] <= a[6].DB_MAX_OUTPUT_PORT_TYPE
+f[6] <= a[7].DB_MAX_OUTPUT_PORT_TYPE
+f[7] <= a[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g51
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+s3 => s3.IN2
+s2 => s2.IN2
+f <= orgate:g7.port2
+
+
+|alu|shift_reg:g3|mux4x2:g51|andgatem8:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g51|andgatem8:g2
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g51|andgatem8:g3
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g51|andgatem8:g4
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g51|orgate:g5
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g51|orgate:g6
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g51|orgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g52
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+s3 => s3.IN2
+s2 => s2.IN2
+f <= orgate:g7.port2
+
+
+|alu|shift_reg:g3|mux4x2:g52|andgatem8:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g52|andgatem8:g2
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g52|andgatem8:g3
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g52|andgatem8:g4
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g52|orgate:g5
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g52|orgate:g6
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g52|orgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g53
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+s3 => s3.IN2
+s2 => s2.IN2
+f <= orgate:g7.port2
+
+
+|alu|shift_reg:g3|mux4x2:g53|andgatem8:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g53|andgatem8:g2
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g53|andgatem8:g3
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g53|andgatem8:g4
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g53|orgate:g5
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g53|orgate:g6
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g53|orgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g54
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+s3 => s3.IN2
+s2 => s2.IN2
+f <= orgate:g7.port2
+
+
+|alu|shift_reg:g3|mux4x2:g54|andgatem8:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g54|andgatem8:g2
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g54|andgatem8:g3
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g54|andgatem8:g4
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g54|orgate:g5
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g54|orgate:g6
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g54|orgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g55
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+s3 => s3.IN2
+s2 => s2.IN2
+f <= orgate:g7.port2
+
+
+|alu|shift_reg:g3|mux4x2:g55|andgatem8:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g55|andgatem8:g2
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g55|andgatem8:g3
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g55|andgatem8:g4
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g55|orgate:g5
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g55|orgate:g6
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g55|orgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g56
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+s3 => s3.IN2
+s2 => s2.IN2
+f <= orgate:g7.port2
+
+
+|alu|shift_reg:g3|mux4x2:g56|andgatem8:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g56|andgatem8:g2
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g56|andgatem8:g3
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g56|andgatem8:g4
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g56|orgate:g5
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g56|orgate:g6
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g56|orgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g57
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+s3 => s3.IN2
+s2 => s2.IN2
+f <= orgate:g7.port2
+
+
+|alu|shift_reg:g3|mux4x2:g57|andgatem8:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g57|andgatem8:g2
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g57|andgatem8:g3
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g57|andgatem8:g4
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g57|orgate:g5
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g57|orgate:g6
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g57|orgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g58
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+s3 => s3.IN2
+s2 => s2.IN2
+f <= orgate:g7.port2
+
+
+|alu|shift_reg:g3|mux4x2:g58|andgatem8:g1
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g58|andgatem8:g2
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g58|andgatem8:g3
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g58|andgatem8:g4
+a => g1.IN0
+b => g1.IN1
+c => g1.IN2
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g58|orgate:g5
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g58|orgate:g6
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|shift_reg:g3|mux4x2:g58|orgate:g7
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g43
+A => A.IN1
+B => B.IN1
+C => C.IN1
+s1 => s1.IN1
+s0 => s0.IN1
+res <= mux2x1:g2.port3
+
+
+|alu|control_unit:g43|mux2x1:g1
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|control_unit:g43|mux2x1:g1|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g43|mux2x1:g1|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g43|mux2x1:g1|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g43|mux2x1:g2
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|control_unit:g43|mux2x1:g2|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g43|mux2x1:g2|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g43|mux2x1:g2|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g45
+A => A.IN1
+B => B.IN1
+C => C.IN1
+s1 => s1.IN1
+s0 => s0.IN1
+res <= mux2x1:g2.port3
+
+
+|alu|control_unit:g45|mux2x1:g1
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|control_unit:g45|mux2x1:g1|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g45|mux2x1:g1|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g45|mux2x1:g1|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g45|mux2x1:g2
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|control_unit:g45|mux2x1:g2|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g45|mux2x1:g2|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g45|mux2x1:g2|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g44
+A => A.IN1
+B => B.IN1
+C => C.IN1
+s1 => s1.IN1
+s0 => s0.IN1
+res <= mux2x1:g2.port3
+
+
+|alu|control_unit:g44|mux2x1:g1
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|control_unit:g44|mux2x1:g1|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g44|mux2x1:g1|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g44|mux2x1:g1|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g44|mux2x1:g2
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|control_unit:g44|mux2x1:g2|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g44|mux2x1:g2|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g44|mux2x1:g2|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g46
+A => A.IN1
+B => B.IN1
+C => C.IN1
+s1 => s1.IN1
+s0 => s0.IN1
+res <= mux2x1:g2.port3
+
+
+|alu|control_unit:g46|mux2x1:g1
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|control_unit:g46|mux2x1:g1|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g46|mux2x1:g1|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g46|mux2x1:g1|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g46|mux2x1:g2
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|control_unit:g46|mux2x1:g2|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g46|mux2x1:g2|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g46|mux2x1:g2|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g42
+A => A.IN1
+B => B.IN1
+C => C.IN1
+s1 => s1.IN1
+s0 => s0.IN1
+res <= mux2x1:g2.port3
+
+
+|alu|control_unit:g42|mux2x1:g1
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|control_unit:g42|mux2x1:g1|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g42|mux2x1:g1|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g42|mux2x1:g1|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g42|mux2x1:g2
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|control_unit:g42|mux2x1:g2|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g42|mux2x1:g2|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g42|mux2x1:g2|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g47
+A => A.IN1
+B => B.IN1
+C => C.IN1
+s1 => s1.IN1
+s0 => s0.IN1
+res <= mux2x1:g2.port3
+
+
+|alu|control_unit:g47|mux2x1:g1
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|control_unit:g47|mux2x1:g1|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g47|mux2x1:g1|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g47|mux2x1:g1|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g47|mux2x1:g2
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|control_unit:g47|mux2x1:g2|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g47|mux2x1:g2|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g47|mux2x1:g2|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g48
+A => A.IN1
+B => B.IN1
+C => C.IN1
+s1 => s1.IN1
+s0 => s0.IN1
+res <= mux2x1:g2.port3
+
+
+|alu|control_unit:g48|mux2x1:g1
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|control_unit:g48|mux2x1:g1|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g48|mux2x1:g1|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g48|mux2x1:g1|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g48|mux2x1:g2
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|control_unit:g48|mux2x1:g2|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g48|mux2x1:g2|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g48|mux2x1:g2|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g49
+A => A.IN1
+B => B.IN1
+C => C.IN1
+s1 => s1.IN1
+s0 => s0.IN1
+res <= mux2x1:g2.port3
+
+
+|alu|control_unit:g49|mux2x1:g1
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|control_unit:g49|mux2x1:g1|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g49|mux2x1:g1|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g49|mux2x1:g1|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g49|mux2x1:g2
+a => a.IN1
+b => b.IN1
+s => s.IN1
+f <= orgate:g3.port2
+
+
+|alu|control_unit:g49|mux2x1:g2|andgate:g1
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g49|mux2x1:g2|andgate:g2
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|control_unit:g49|mux2x1:g2|orgate:g3
+a => g1.IN0
+b => g1.IN1
+f <= g1.DB_MAX_OUTPUT_PORT_TYPE
+
+

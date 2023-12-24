@@ -1,0 +1,2 @@
+ble_pack f_obuf_RNO_LC_0 {f_obuf_RNO}
+clb_pack PLB_0 {f_obuf_RNO_LC_0}

@@ -1,0 +1,77 @@
+module full_adder(
+input wire A,
+input wire B,
+output wire sumout_add,
+output wire sumout_sub);
+
+ wire cin_add;
+ reg cout_add;
+ wire cin_sub;
+ reg cout_sub;
+ wire of;
+ wire tempa1;
+ wire tempb2;
+ wire tempc3;
+ wire tempd4;
+ wire tempa;
+ wire tempb;
+ wire tempc;
+ wire tempd;
+ wire tempe;
+
+	 xorgate g1(A,B,tempa1);
+	 xorgate g2(tempa1,cin_add,sumout_add);
+	 andgate g3(cin_add,B,tempb2);
+	 andgate g4(cin_add,A,tempc3);
+	 andgate g5(A,B,tempd4);
+	 orgate_cout g6(tempb2,tempc3,tempd4,cout_add);
+	 assign cin_add = cout_add;
+	
+		 
+	xorgate g_1(A,B,tempa);
+	xorgate g_2(tempa,cin_sub,sumout_sub);
+	notgate g_3(B,tempb);
+	andgate g_4(tempb,A,tempc);
+	notgate g_5(tempa,tempd);
+	andgate g_6(cin_sub,tempd,tempe);
+	orgate  g_7(tempe,tempc,cout_sub);
+	assign cin_sub = cout_sub;
+		  
+
+endmodule
+
+module xorgate(a,b,f);
+input a,b;
+output f;
+assign f = a ^ b;
+endmodule
+
+module orgate(a,b,f);
+input a, b ;
+output f ;
+assign f = a|b ;
+endmodule
+
+module andgate(a,b,f);
+input a, b;
+output f;
+assign f= a&b ;
+endmodule
+
+module orgate_cout(a,b,c,f);
+input a, b, c;
+output f;
+assign f = a | b | c;
+endmodule 
+
+
+module notgate(a, f);
+
+input a;
+
+output f;
+
+assign f = ~ a;
+
+endmodule
+   
